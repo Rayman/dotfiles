@@ -133,4 +133,9 @@ export PROMPT_COMMAND='__git_ps1 "\n\[\033[01;34m\]\w\[\033[00m\]" "\n\[\e]0;\u@
 export PERL5LIB=~/share/perl/5.14.2/
 
 export EDITOR=vim
-source ~/catkin_ws/devel/setup.bash
+
+# load ROS environment if it exists
+if [ -f ~/catkin_ws/devel/setup.bash ]
+then
+	source ~/catkin_ws/devel/setup.bash
+fi
