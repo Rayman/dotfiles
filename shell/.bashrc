@@ -118,6 +118,10 @@ fi
 
 # show unstaged (*) and staged (+) changes next to the branch name
 export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
+export GIT_PS1_SHOWUPSTREAM=auto
+
 export GIT_PS1_SHOWCOLORHINTS=1
 
 # default Ubuntu prompt
