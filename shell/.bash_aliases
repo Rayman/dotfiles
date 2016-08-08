@@ -6,9 +6,10 @@ alias .....="cd ../../../.."
 function svndiff () { svn diff $@ | colordiff | less -R; }
 
 alias cm="catkin_make -C ~/catkin_ws/"
-alias trunk="cd ~/catkin_ws/src/"
+alias trunk="cd ~/catkin_ws/src/agv2"
+alias fms="cd ~/src/fms/work/collaboration/collaboration_python_playground"
 
-alias dev="ssh ramwij@10.1.1.65"
+alias dev="ssh ramwij@lnxdev01"
 
 alias astart="roslaunch agv_stage agv_lab.launch"
 alias agv-teleop="rosrun teleop_twist_keyboard teleop_twist_keyboard.py cmd_vel:=nav_cmd_vel"
