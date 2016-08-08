@@ -1,4 +1,10 @@
 alias open="xdg-open"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+function svndiff () { svn diff $@ | colordiff | less -R; }
+
 alias cm="catkin_make -C ~/catkin_ws/"
 alias trunk="cd ~/catkin_ws/src/"
 
