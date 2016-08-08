@@ -1,6 +1,7 @@
 alias open="xdg-open"
 alias cm="catkin_make -C ~/catkin_ws/"
-alias trunk="cd ~/catkin_ws/src/"
+alias trunk="cd ~/catkin_ws/src/agv2"
+alias fms="cd ~/src/fms/work/collaboration/collaboration_python_playground"
 
 alias dev="ssh ramwij@lnxdev01"
 
