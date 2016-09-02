@@ -143,3 +143,8 @@ if [[ -f ~/.tue/setup.bash ]]
 then
 	source ~/.tue/setup.bash
 fi
+
+if [[ -f ~/.tue/setup.bash ]]
+then
+	source ~/.tue/setup.bash
+fi
