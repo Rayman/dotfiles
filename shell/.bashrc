@@ -139,8 +139,7 @@ export PERL5LIB=~/share/perl/5.14.2/
 
 export EDITOR=vim
 
-# load ROS environment if it exists
-if [ -f ~/catkin_ws/devel/setup.bash ]
+if [[ -f ~/.tue/setup.bash ]]
 then
-	source ~/catkin_ws/devel/setup.bash
+	source ~/.tue/setup.bash
 fi
