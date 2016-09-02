@@ -4,6 +4,8 @@ call plug#begin()
 
 Plug 'tpope/vim-sensible'
 
+Plug 'editorconfig/editorconfig-vim'
+
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 Plug 'kien/ctrlp.vim'
