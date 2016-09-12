@@ -3,7 +3,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-function svndiff () { svn diff $@ | colordiff | less -R; }
+function svndiff () { svn diff $@ | colordiff | less -r; }
 
 alias cm="catkin_make -C ~/catkin_ws/"
 alias trunk="cd ~/catkin_ws/src/agv2"
