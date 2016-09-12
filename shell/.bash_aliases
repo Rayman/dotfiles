@@ -8,7 +8,7 @@ function zoek () { find . -iname "$1"; }
 
 alias cm="catkin_make -C ~/catkin_ws/"
 alias trunk="cd ~/catkin_ws/src/agv2"
-alias fms="cd ~/src/fms/work/collaboration/collaboration_python_playground"
+alias fms="cd ~/src/fms/work/collaboration/"
 
 alias dev="ssh ramwij@lnxdev01"
 
