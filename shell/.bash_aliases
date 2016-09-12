@@ -4,6 +4,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 function svndiff () { svn diff $@ | colordiff | less -r; }
+function zoek () { find . -iname "$1"; }
 
 alias cm="catkin_make -C ~/catkin_ws/"
 alias trunk="cd ~/catkin_ws/src/agv2"
