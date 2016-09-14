@@ -116,6 +116,13 @@ if ! shopt -oq posix; then
   fi
 fi
 
+########################
+# Custom configuration #
+########################
+
+export EDITOR=vim
+
+# my custom prompt
 # show unstaged (*) and staged (+) changes next to the branch name
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
@@ -124,27 +131,29 @@ export GIT_PS1_SHOWUPSTREAM=auto
 
 export GIT_PS1_SHOWCOLORHINTS=1
 
-# default Ubuntu prompt
-#export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$'
-
-# prompt from the git-prompt.sh
-#PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
-
-# my custom prompt
 export PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
 export PROMPT_COMMAND='__git_ps1 "\n\[\033[01;34m\]\w\[\033[00m\]" "\n\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]\$ "'
 
 # load perl modules installed in home folder
 export PERL5LIB=~/share/perl/5.14.2/
 
-export EDITOR=vim
+# private bash configuration is done here
+if [ -f ~/.bash_secrets ]; then
+    . ~/.bash_secrets
+fi
 
-if [[ -f ~/.tue/setup.bash ]]
+if [ "$USE_CLANG" ]
 then
-	source ~/.tue/setup.bash
+    export CC=clang
+    export CXX=clang++
+fi
+
+if [ "$USE_CCACHE" ]
+then
+    export PATH=/usr/lib/ccache:$PATH
 fi
 
 if [[ -f ~/.tue/setup.bash ]]
 then
-	source ~/.tue/setup.bash
+	. ~/.tue/setup.bash
 fi
