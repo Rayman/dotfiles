@@ -18,6 +18,10 @@ call plug#end()
 
 
 
+colorscheme torte
+
+
+
 " vim-gitgutter
 set updatetime=250
 
