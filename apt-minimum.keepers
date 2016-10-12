@@ -4,6 +4,7 @@ debfoster
 editorconfig
 git-extras
 git-gui
+htop
 meld
 nodejs-legacy
 npm
