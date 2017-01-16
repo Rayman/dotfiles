@@ -9,6 +9,11 @@
 
 # Eclipse Core
 .project
+.settings/
 
 # CDT-specific (C/C++ Development Tooling)
 .cproject
+
+# qtcreator
+CMakeLists.txt.user
+*-build/
