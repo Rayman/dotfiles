@@ -9,6 +9,8 @@ function svnclean () {
 }
 function zoek () { find . -iname "$1"; }
 
+alias retry='while [ $? -ne 0 ] ; do fc -s ; done'
+
 alias cm="catkin_make -C ~/catkin_ws/"
 alias trunk="cd ~/catkin_ws/src/RosPkgs"
 alias fms="cd ~/src/fms/work/"
