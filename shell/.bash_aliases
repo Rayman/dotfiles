@@ -1,25 +1,15 @@
-alias open="xdg-open"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
+
+# svn
 function svndiff () { svn diff $@ | colordiff | less -r; }
 function svnclean () {
 	svn status --no-ignore | grep -E '(^\?)|(^\I)' | sed -e 's/^. *//' | sed -e 's/\(.*\)/"\1"/' | xargs rm -rf
 }
-function zoek () { find . -iname "$1"; }
 
+alias docker="sudo docker"
+alias open="xdg-open"
 alias retry='while [ $? -ne 0 ] ; do fc -s ; done'
-
-alias cm="catkin_make -C ~/catkin_ws/"
-alias trunk="cd ~/catkin_ws/src/RosPkgs"
-alias fms="cd ~/src/fms/work/"
-alias agv="cd ~/src/repos/work"
-
-alias dev="ssh ramwij@lnxdev01"
-
-alias astart="roslaunch agv_stage agv_lab.launch"
-alias agv-teleop="rosrun teleop_twist_keyboard teleop_twist_keyboard.py cmd_vel:=nav_cmd_vel"
-alias agv2-teleop="rosrun teleop_twist_keyboard teleop_twist_keyboard.py __ns:=robot_0 cmd_vel:=nav_cmd_vel"
-
-alias debug-recovery="rosservice call /move_base/set_logger_level ros.move_base.move_base_recovery Debug"
+function zoek () { find . -iname "$1"; }
