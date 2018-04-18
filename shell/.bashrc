@@ -153,6 +153,9 @@ then
     export PATH=/usr/lib/ccache:$PATH
 fi
 
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
 if [[ -f ~/.tue/setup.bash ]]
 then
 	. ~/.tue/setup.bash
