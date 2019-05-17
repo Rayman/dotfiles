@@ -6,7 +6,7 @@ git-extras
 git-gui
 htop
 meld
-nodejs-legacy
+nodejs
 npm
 python-ipdb
 python-pip
