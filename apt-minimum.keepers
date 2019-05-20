@@ -11,4 +11,6 @@ npm
 python-ipdb
 python-pip
 stow
+terminator
+tree
 yamllint
