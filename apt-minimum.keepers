@@ -11,6 +11,7 @@ npm
 python-ipdb
 python-pip
 stow
+synaptic
 terminator
 tree
 yamllint
