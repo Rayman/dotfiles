@@ -1,4 +1,5 @@
 ack-grep
+aptitude
 colordiff
 debfoster
 editorconfig
@@ -6,10 +7,10 @@ git-extras
 git-gui
 htop
 meld
-nodejs
 npm
 python-ipdb
 python-pip
+qtcreator
 stow
 synaptic
 terminator
