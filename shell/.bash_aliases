@@ -21,5 +21,5 @@ alias open="xdg-open"
 alias retry='while [ $? -ne 0 ] ; do fc -s ; done'
 function zoek () { find . -iname "$1"; }
 
-alias trunk='roscd && cd ../src'
+alias trunk='roscd && cd ../repos/project-*'
 alias view_frames='cd /tmp && rosrun tf view_frames && open frames.pdf && cd -'
