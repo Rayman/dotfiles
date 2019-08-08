@@ -16,6 +16,7 @@ function svnclean () {
 
 alias docker="sudo docker"
 alias docker-remove-all-images='docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")'
+alias docker-remove-none-images='docker rmi $(docker images -f "dangling=true" -q)'
 #alias docker-remove-all-images='docker rmi $(docker images -q)'
 alias docker-cleanup='docker rm $(docker ps -qa)'
 alias open="xdg-open"
