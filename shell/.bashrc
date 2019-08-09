@@ -115,7 +115,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-if [ $TILIX_ID ] || [ $VTE_VERSION ] ; then source /etc/profile.d/vte.sh; fi # Ubuntu Budgie END
 
 ########################
 # Custom configuration #
@@ -134,8 +133,6 @@ export GIT_PS1_SHOWCOLORHINTS=1
 
 function custom_prompt() {
   __git_ps1 "\n\[\033[01;34m\]\w\[\033[00m\]" "\n\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]\$ "
-  VTE_PWD_THING="\[$(__vte_osc7)\]"
-  PS1="$PS1$VTE_PWD_THING"
 }
 PROMPT_COMMAND=custom_prompt
 
