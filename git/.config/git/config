@@ -7,3 +7,7 @@
 	lg = log --color --graph --abbrev-commit --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset'
 [core]
 	excludesfile = ~/.git-core-excludesfile
+	attributesfile = ~/.git-core-attributesfile
+[diff "image"]
+	textconv = identify -format '%m %G %g %b %Q\n'
+	binary = true
