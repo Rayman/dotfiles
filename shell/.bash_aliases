@@ -15,10 +15,8 @@ function svnclean () {
 }
 
 alias docker="sudo docker"
-alias docker-remove-all-images='docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")'
-alias docker-remove-none-images='docker rmi $(docker images -f "dangling=true" -q)'
-#alias docker-remove-all-images='docker rmi $(docker images -q)'
 alias docker-cleanup='docker rm $(docker ps -qa)'
+alias docker-remove-none-images='docker rmi $(docker images -f "dangling=true" -q)'
 alias open="xdg-open"
 alias retry='while [ $? -ne 0 ] ; do fc -s ; done'
 function zoek () { find . -iname "$1"; }
