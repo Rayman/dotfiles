@@ -5,15 +5,10 @@ debfoster
 docker.io
 editorconfig
 git-extras
-git-gui
 htop
-meld
 npm
 python-ipdb
 python-pip
-qtcreator
 stow
-synaptic
-terminator
 tree
 yamllint
