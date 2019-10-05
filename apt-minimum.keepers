@@ -11,4 +11,5 @@ python-ipdb
 python-pip
 stow
 tree
+vim
 yamllint
