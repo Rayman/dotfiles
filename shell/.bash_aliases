@@ -14,9 +14,8 @@ function svnclean () {
 	svn status --no-ignore | grep -E '(^\?)|(^\I)' | sed -e 's/^. *//' | sed -e 's/\(.*\)/"\1"/' | xargs rm -rf
 }
 
-alias docker="sudo docker"
 alias docker-cleanup='docker rm $(docker ps -qa)'
-alias docker-remove-none-images='docker rmi $(docker images -f "dangling=true" -q)'
+alias docker-remove-none-images='docker images -qf=dangling=true | xargs --no-run-if-empty docker rmi'
 alias open="xdg-open"
 alias retry='while [ $? -ne 0 ] ; do fc -s ; done'
 function zoek () { find . -iname "$1"; }
