@@ -5,6 +5,7 @@ alias .....="cd ../../../.."
 
 alias ack='ack --follow'
 alias ag='ag --follow'
+alias rg='rg --follow'
 alias bc='bc -l'
 
 
