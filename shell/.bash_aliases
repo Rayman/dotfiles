@@ -9,6 +9,10 @@ alias rg='rg --follow'
 alias bc='bc -l'
 
 
+# pip
+alias pip-uninstall-all="python -m pip freeze |  perl -pe 's/==.+//g' | xargs -n1 sudo -H python -m pip uninstall -y"
+alias pip-uninstall-all="python3 -m pip freeze |  perl -pe 's/==.+//g' | xargs -n1 sudo -H python3 -m pip uninstall -y"
+
 # svn
 function svndiff () { svn diff $@ | colordiff | less -r; }
 function svnclean () {
