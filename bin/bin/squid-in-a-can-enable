@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+docker run --net host -d --name squid-in-a-can jpetazzo/squid-in-a-can || docker start squid-in-a-can
+sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to 3129 -w
+echo OK

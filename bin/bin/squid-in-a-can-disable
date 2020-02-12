@@ -1,0 +1,3 @@
+#!/bin/bash
+docker kill squid-in-a-can
+sudo iptables -t nat -D PREROUTING -p tcp --dport 80 -j REDIRECT --to 3129 -w
