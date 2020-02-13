@@ -6,9 +6,6 @@ docker.io
 editorconfig
 git-extras
 htop
-npm
-python-ipdb
-python-pip
 stow
 tree
 vim
