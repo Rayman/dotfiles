@@ -144,13 +144,13 @@ if [ -f ~/.bash_secrets ]; then
     . ~/.bash_secrets
 fi
 
-if [ "$USE_CLANG" ]
+if [ -n "$USE_CLANG" ]
 then
     export CC=clang
     export CXX=clang++
 fi
 
-if [ "$USE_CCACHE" ]
+if [ -n "$USE_CCACHE" ]
 then
     export PATH=/usr/lib/ccache:$PATH
 fi
