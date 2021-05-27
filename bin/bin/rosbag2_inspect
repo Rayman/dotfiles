@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+
+# Print total cumulative serialized msg size per topic
+from argparse import ArgumentParser
+from rosbag2_py import SequentialReader, StorageOptions, ConverterOptions
+import sys
+import os
+from pathlib import Path
+from collections import Counter
+
+
+def main(path):
+    path = str(Path(path))
+    storage_options = StorageOptions(uri=path, storage_id='sqlite3')
+    serialization_format = 'cdr'
+    converter_options = ConverterOptions(
+        input_serialization_format=serialization_format,
+        output_serialization_format=serialization_format)
+
+    reader = SequentialReader()
+    reader.open(storage_options, converter_options)
+
+    topic_size_counter = Counter()
+    while reader.has_next():
+        (topic, data, _) = reader.read_next()
+        topic_size_counter[topic] += len(data)
+
+    topic_size = list(topic_size_counter.items())
+    topic_size.sort(key=lambda x: x[1])
+    for topic, size in topic_size:
+        print(size, topic)
+
+
+def dir_path(string):
+    if os.path.isdir(string):
+        return string
+    else:
+        raise NotADirectoryError(string)
+
+
+if __name__ == '__main__':
+    parser = ArgumentParser()
+    parser.add_argument('path', type=dir_path)
+    args = parser.parse_args()
+    main(**vars(args))
