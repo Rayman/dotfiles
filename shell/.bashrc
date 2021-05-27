@@ -155,4 +155,9 @@ then
     export PATH=/usr/lib/ccache:$PATH
 fi
 
+# prevent gazebo from loading models online
+export GAZEBO_MODEL_DATABASE_URI=
+
+# ROS2 configuration
+source /usr/share/colcon_cd/function/colcon_cd.sh
 
