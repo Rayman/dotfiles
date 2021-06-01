@@ -87,6 +87,9 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+# enable prefer using exa over ls
+command -v exa &> /dev/null && alias ls=exa
+
 # some more ls aliases (these should also work for exa)
 alias ll='ls -alFh'
 alias la='ls -a'
