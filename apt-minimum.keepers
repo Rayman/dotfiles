@@ -1,9 +1,12 @@
 aptitude
+ccache
 colordiff
 debfoster
 docker.io
 editorconfig
 git-extras
+git-gui
+gitk
 htop
 nmap
 ripgrep
