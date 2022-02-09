@@ -1,13 +1,23 @@
 #!/usr/bin/env python3
+"""Print total cumulative serialized msg size per topic"""
 
-# Print total cumulative serialized msg size per topic
-import rosbag
 import sys
+from collections import Counter
+import rosbag
+from time import time
 
-topic_size_dict = {}
-for topic, msg, time in rosbag.Bag(sys.argv[1], 'r').read_messages(raw=True):
-    topic_size_dict[topic] = topic_size_dict.get(topic, 0) + len(msg[1])
+print_position = 0
+topic_size_dict = Counter()
+with rosbag.Bag(sys.argv[1], 'r') as b:
+    size = b.size
+    for topic, (datatype, data, md5sum, position, pytype), stamp in b.read_messages(raw=True):
+        if position[0] - print_position > 5_000_000:
+            print_position = position[0]
+            print('\r{:.2%} processed'.format(position[0] / size), end='')
+
+        topic_size_dict[topic] += len(data)
+
 topic_size = list(topic_size_dict.items())
 topic_size.sort(key=lambda x: x[1])
 for topic, size in topic_size:
-    print(size, topic)
+    print('{:<10} {}'.format(size, topic))
