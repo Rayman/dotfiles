@@ -28,6 +28,16 @@ function zoek () { find . -iname "$1"; }
 alias trunk='roscd && cd ../repos/project-*'
 alias view_frames='cd /tmp && rosrun tf2_tools view_frames.py && open frames.pdf && cd -'
 
+alias smach_viewer_docker='xhost +SI:localuser:root
+    docker run -it --rm \
+        --net=host \
+        -e DISPLAY=$DISPLAY \
+        -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+        -v ~/.ros/dotfiles:/root/.ros/dotfiles \
+        --device /dev/dri:/dev/dri \
+        --ipc host \
+        nobleo/smach_viewer'
+
 # -r --recursive
 # -l --links
 # -p --perms
