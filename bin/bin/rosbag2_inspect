@@ -11,7 +11,7 @@ from collections import Counter
 
 def main(path):
     path = str(Path(path))
-    storage_options = StorageOptions(uri=path, storage_id='sqlite3')
+    storage_options = StorageOptions(uri=path, storage_id='')
     serialization_format = 'cdr'
     converter_options = ConverterOptions(
         input_serialization_format=serialization_format,
@@ -31,15 +31,8 @@ def main(path):
         print(size, topic)
 
 
-def dir_path(string):
-    if os.path.isdir(string):
-        return string
-    else:
-        raise NotADirectoryError(string)
-
-
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('path', type=dir_path)
+    parser.add_argument('path')
     args = parser.parse_args()
     main(**vars(args))
