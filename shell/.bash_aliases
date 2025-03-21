@@ -25,7 +25,7 @@ alias open="xdg-open"
 alias retry='while [ $? -ne 0 ] ; do fc -s ; done'
 function zoek () { find . -iname "$1"; }
 
-alias trunk='roscd && cd ../repos/project-*'
+alias trunk='cd "$NOBLEO_ENV_DIR"'
 alias view_frames='cd /tmp && rosrun tf2_tools view_frames.py && open frames.pdf && cd -'
 
 alias smach_viewer_docker='xhost +SI:localuser:root
